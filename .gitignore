@@ -1,5 +1,8 @@
+private/
 build/
 dist/
 *~
 *.fasta
 .svn
+lib/
+manifest.mf

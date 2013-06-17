@@ -2,4 +2,4 @@ RDP Primer/Probe Match tool.
 
 Quick Start:
   ant jar
-  java -jar dist/PrimerMatch.jar edu/msu/cme/rdp/probematch/cli/PrimerMatch
+  java -jar dist/PrimerMatch.jar
