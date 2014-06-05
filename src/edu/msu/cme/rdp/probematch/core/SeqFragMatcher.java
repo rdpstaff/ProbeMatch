@@ -74,15 +74,4 @@ public class SeqFragMatcher {
 
         return new FragmentMatch(alignment.getAlignedMatchFragment(), alignment.getAlignedProbe(), match.getPosition() - alignment.getAlignedMatchFragment().replace("-", "").length(), match.getPosition(), match.getScore());
     }
-
-    public static void main(String [] args) {
-        String patt =    "ACAGTC";
-        String text = "XXXACTGTXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-
-        SeqFragMatcher matcher = new SeqFragMatcher(patt, Integer.MAX_VALUE, false);
-        FragmentMatch best = matcher.getBestMatch(text);
-
-        System.out.println(best.getAlignedFragment());
-        System.out.println(best.getAlignedMatchRegion());
-    }
 }

@@ -14,8 +14,9 @@ public class PatternBitMask64 {
     public static final long one = 1;
     public final long[] bitMask = new long[Myers99.SIGMA];
     public final int remainder;
-    public final int patternLength;
-
+    private final int patternLength;
+    private String primerName= "NA";
+    
     /** Creates a new instance of PatternBitMask 
      *  NEED TO ADD IUPAC   
      */
@@ -23,6 +24,11 @@ public class PatternBitMask64 {
         this(patternString.toLowerCase().toCharArray(), matchAmbiguity);
     }
 
+    public PatternBitMask64(String patternString, boolean matchAmbiguity, String primer) {
+        this(patternString.toLowerCase().toCharArray(), matchAmbiguity);
+        primerName = primer;
+    }
+    
     public PatternBitMask64(char[] pattern, boolean matchAmbiguity) {
         if (pattern.length > 64) {
             throw new IllegalStateException("PatternBitMask: pattern greater then 64.");
@@ -197,7 +203,7 @@ public class PatternBitMask64 {
 
         patternLength = pattern.length;
     }
-
+    
     public final long getCharMask(int character) {
         return bitMask[character];
     }
@@ -208,5 +214,9 @@ public class PatternBitMask64 {
 
     public final int getPatternLength() {
         return patternLength;
+    }
+    
+    public final String getPrimerName() {
+        return primerName;
     }
 }
